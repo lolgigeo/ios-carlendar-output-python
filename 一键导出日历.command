@@ -77,7 +77,7 @@ read -p "请输入输出文件名 (默认为自动生成): " output_file
 # 构建Python命令参数
 python_cmd="python3 calendar_export.py"
 if [ -n "$calendar_name" ]; then
-    python_cmd+=" --calendar \"$calendar_name\""
+    python_cmd+=" --calendar $calendar_name"
 fi
 if [ -n "$start_date" ]; then
     python_cmd+=" --start $start_date"
@@ -86,7 +86,7 @@ if [ -n "$end_date" ]; then
     python_cmd+=" --end $end_date"
 fi
 if [ -n "$output_file" ]; then
-    python_cmd+=" --output \"$output_file\""
+    python_cmd+=" --output $output_file"
 fi
 
 # 执行导出命令

@@ -25,7 +25,7 @@ echo ""
 echo "开始导出日历日程，请稍候..."
 
 # 执行导出命令
-python3 calendar_export.py --start "$start_date" --end "$end_date" --output "$output_file"
+python3 calendar_export.py --start $start_date --end $end_date --output $output_file
 
 # 导出完成后的提示
 echo ""

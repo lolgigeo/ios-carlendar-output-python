@@ -54,9 +54,9 @@ if [ -z "$output_file" ]; then
 fi
 
 # 构建Python命令参数
-python_cmd="python3 calendar_export.py --start $start_date --end $end_date --output \"$output_file\""
+python_cmd="python3 calendar_export.py --start $start_date --end $end_date --output $output_file"
 if [ -n "$calendar_name" ]; then
-    python_cmd+=" --calendar \"$calendar_name\""
+    python_cmd+=" --calendar $calendar_name"
 fi
 
 # 执行导出命令
