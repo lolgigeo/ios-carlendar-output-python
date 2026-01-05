@@ -25,6 +25,12 @@ macOS 日历导出工具
 def run_applescript(script):
     """执行 AppleScript 脚本并返回结果"""
     try:
+        # 先尝试运行Calendar应用程序（如果未运行）
+        subprocess.run(['open', '-g', '-a', 'Calendar'], check=False)
+        # 给Calendar应用一些时间启动
+        import time
+        time.sleep(1)
+        
         result = subprocess.run(
             ['osascript', '-e', script],
             capture_output=True,
